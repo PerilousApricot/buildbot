@@ -22,7 +22,7 @@ from optparse import OptionParser
 from buildbot.changes.changes import Change
 import datetime
 import time
-from twisted.python.log import msg,err
+from twisted.python.log import msg ,err
 import calendar
 import time
 import calendar
@@ -88,7 +88,6 @@ def getChanges(request, options = None):
             repo_url = payload['repository']['url']
             private = payload['repository']['private']
             changes = process_change(payload, user, repo, repo_url)
-            msg("Received %s changes from github" % len(changes))
             return changes
         except Exception:
             logging.error("Encountered an exception:")
